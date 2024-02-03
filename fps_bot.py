@@ -25,14 +25,15 @@ async def on_ready():
     # Get the target channel
     target_channel = bot.get_channel(TARGET_CHANNEL_ID)
     
-    # Send a message to the target channel
+    # Send a message to the target channel upon bot connection
     await target_channel.send('**FPS Bot**, se připojil! Nyní můžete nahrávat soubory s misemi.')
 
 @bot.event
 async def on_message(message):
+    # Print details of new message detected in target channel
     print(f'Received message "{message.content}" in channel: {message.channel.name} (ID: {message.channel.id}) by {message.author.name} (ID: {message.author.id})')
 
-    # Print message content and attachments for debugging
+    # Print message content and attachments for debugging purposes
     # print(f'Message content: {message.content}')
     # print(f'Message attachments: {message.attachments}')
 
@@ -60,7 +61,7 @@ async def save_attachment(attachment):
     print(f'Saved file: {file_name}')
     print(f'File size: {len(content)} bytes')
 
-    # Send a message to Discord with the saved filename
+    # Send a message to Discord with the saved filename after it was processed
     channel = bot.get_channel(TARGET_CHANNEL_ID)
     await channel.send(f"Mission file **__'{file_name}'__** byl úspěšně nahrán!")
     await channel.send(f"**---------------------- Nyní můžete nahrát další soubor ----------------------**")
