@@ -4,11 +4,11 @@ from discord.ext import commands
 import asyncio
 
 # Replace 'YOUR_BOT_TOKEN' with your actual bot token
-TOKEN = 'MzUyNTIzNTU2NDc2NjgyMjQx.GPnr1r.YbKZM0P29w6X7-YgZteIo8u7Gn227wddxVEGbY'
+TOKEN = 'YOUR_BOT_TOKEN'
 # Replace 'TARGET_CHANNEL_ID' with the ID of the text channel you want to monitor
-TARGET_CHANNEL_ID = 1105550723153928253
+TARGET_CHANNEL_ID = TARGET_CHANNEL_ID
 # Replace 'TARGET_FOLDER' with the path to the folder where you want to save the files
-TARGET_FOLDER = 'C:\\Server\\Arma\\mpmissions'
+TARGET_FOLDER = 'X:\\Your\\Target\\folder'
 
 intents = discord.Intents.default()
 intents.messages = True
