@@ -1,4 +1,5 @@
-[![Python Syntax Test](https://github.com/dartus95/fps_bot/actions/workflows/python-app.yml/badge.svg)](https://github.com/dartus95/fps_bot/actions/workflows/python-app.yml) ![Release](https://img.shields.io/github/v/release/dartus95/fps_bot?token=${{secrets.FPS_GITHUB_TOKEN}})
+[![Python Syntax Test](https://github.com/dartus95/fps_bot/actions/workflows/python-app.yml/badge.svg)](https://github.com/dartus95/fps_bot/actions/workflows/python-app.yml) 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/dartus95/fps_bot)
 
 <!-- ![Static Badge](https://img.shields.io/badge/Release%20Version-Version%201.1.0-brightgreen) -->
 
