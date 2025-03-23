@@ -1,5 +1,3 @@
 # Import the used libraries for this project
-import discord;
-from datetime import datetime, UTC;
-from discord.ext import commands;
-import asyncio;
+discord.py # For handling discord connections
+python-dateutil # For handling date and time
