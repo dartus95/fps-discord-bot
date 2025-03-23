@@ -7,6 +7,7 @@ on:
       - 'README.md'
       - 'LICENSE'
 
+
 jobs:
   release-badge:
     runs-on: ubuntu-latest
@@ -66,9 +67,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add badges/release-badge.svg
-          git commit -m "Update release badge to ${RELEASE_TAG}"
-          git push
           git add badges/release-badge.svg
           git commit -m "Update release badge to ${RELEASE_TAG}"
           git push
