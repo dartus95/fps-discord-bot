@@ -6,7 +6,7 @@
 <!-- ![Static Badge](https://img.shields.io/badge/Release%20Version-Version%201.1.0-brightgreen) -->
 
 # FPS Discord Bot
-Tento bot byl vytvořen pro účely klanu Fatal Puppies Squad, který ukládá soubor Arma 3 mise vytvořený Zeusem bez nutnosti přihlašovat se na vzdálený server Windows nebo používat programy jako AnyDesk, Teamviewer a další.
+Tento bot byl vytvořen pro účely klanu Fatal Puppies Squad, a jedná se o bota, který ukládá soubor Arma 3 mise vytvořený Zeusem bez nutnosti přihlašovat se na vzdálený server Windows nebo používat programy jako AnyDesk, Teamviewer a další.
 
 Jeho cílem je přijmout soubor zaslaný na konkrétní kanál Discord jako přílohu a uložit jej do určeného adresáře na serveru, kde je bot spuštěn. V podstatě jej tedy lze použít i v dalších případech, kdy by bylo nahrávání souborů na server za normálních okolností příliš obtížné nebo nechcete někomu zbytečně poskytovat přístup.
 
