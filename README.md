@@ -1,5 +1,5 @@
 [![Python Syntax Test](https://github.com/dartus95/fps_bot/actions/workflows/python-app.yml/badge.svg)](https://github.com/dartus95/fps_bot/actions/workflows/python-app.yml)
-![Static Badge](https://img.shields.io/badge/Release%20Version-Version%201.1.0-green)
+![Static Badge](https://img.shields.io/badge/Release%20Version-Version%201.1.0-brightgreen)
 
 # FPS Discord Bot
 FPS Clan has created this bot to save the mission file made by the mission maker without the hassle of logging into a remote Windows server or using programs such as AnyDesk, Teamviewer and else.
