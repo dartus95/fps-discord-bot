@@ -42,4 +42,4 @@ jobs:
       env:
         BOT_TOKEN_ID: ${{ secrets.BOT_TOKEN_ID }}
         CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-        MISSION_FILE_PATH: ${{ variables.MISSION_FILE_PATH }}
+        MISSION_FILE_PATH: ${{ vars.MISSION_FILE_PATH }}
