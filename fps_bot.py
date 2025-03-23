@@ -5,16 +5,11 @@ from discord.ext import commands
 import asyncio
 
 # Replace 'BOT_TOKEN_ID' with your actual bot token
-# TOKEN = 'BOT_TOKEN_ID'
+TOKEN = 'BOT_TOKEN_ID'
 # Replace 'CHANNEL_ID' with the ID of the text channel you want to monitor
-# TARGET_CHANNEL_ID = CHANNEL_ID
+TARGET_CHANNEL_ID = CHANNEL_ID
 # Replace 'TARGET_FOLDER' with the path to the folder where you want to save the files in following format: X:\\Your\\Target\\folder
-# TARGET_FOLDER = 'MISSION_FILE_PATH'
-
-# Sekce pro automatizovanou kontrolu githubem
-TOKEN = os.getenv('BOT_TOKEN_ID')
-TARGET_CHANNEL_ID = int(os.getenv('CHANNEL_ID'))
-TARGET_FOLDER = os.getenv('MISSION_FILE_PATH')
+TARGET_FOLDER = 'MISSION_FILE_PATH'
 
 
 intents = discord.Intents.default()
@@ -37,7 +32,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    # Ignoruj zprávy z jiných kanálů než cílového
+    # Ignore messages from channels other that target one
     if message.channel.id != TARGET_CHANNEL_ID:
         return
     
@@ -52,21 +47,21 @@ async def on_message(message):
         # print(f'Detected new message with content: {message.content}')
 
         for attachment in message.attachments:
-            # KONTROLA FORMÁTU - povolení pouze .pbo souborů
+            # Format check - allows only .pbo files
             if not attachment.filename.lower().endswith('.pbo'):
                 await message.channel.send(f"<@{message.author.id}>, Chyba: Povoleny jsou pouze .pbo soubory!")
                 await message.add_reaction("❌")
-                continue  # Přeskočí neplatný soubor
+                continue  # Invalid file will be skipped
 
-            # KONTROLA VELIKOSTI - maximálně 5MB
+            # File size check - up to 5MB
             MAX_SIZE_MB = 5
-            if attachment.size > 5 * 1024 * 1024:  # 5MB v bytech
+            if attachment.size > 5 * 1024 * 1024:  # 5MB in bytes
                 await message.channel.send(
                     f"<@{message.author.id}>, Soubor '{attachment.filename}' přesahuje {MAX_SIZE_MB}MB! Prosím kontaktuj správce serveru!"
                 )
                 await message.add_reaction("❌")
                 continue
-                # Pokud projde kontrolami, pokračuje v uložení
+                # If it passes the checks, it continues to be stored
             
             # Pass the uploader's name to the save_attachment function
             await save_attachment(attachment, message.author.id)
@@ -78,15 +73,15 @@ async def on_message(message):
 
 @bot.command(name='check')
 async def check_bot_status(ctx):
-    # Logování do konzole
+    # Logging into the console
     print(f'Status check proveden uživatelem: {ctx.author.name} ({ctx.author.id})')
     
-    # Výpočet doby běhu
+    # Calculation of running time
     current_time = datetime.now(UTC)
     uptime = current_time - bot.user.created_at.replace(tzinfo=UTC)
-    uptime_str = str(uptime).split('.')[0]  # Odstraní mikrosekundy
+    uptime_str = str(uptime).split('.')[0]  # Removes microseconds
 
-    # Odezva v Discordu
+    # Latency in Discord
     embed = discord.Embed(
         title="🟢 BOT JE ONLINE",
         description=f"Bot běží správně",
