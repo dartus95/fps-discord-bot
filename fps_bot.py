@@ -5,11 +5,11 @@ from discord.ext import commands
 import asyncio
 
 # Replace 'BOT_TOKEN_ID' with your actual bot token
-TOKEN = 'BOT_TOKEN_ID'
+TOKEN = 'BOT_TOKEN_ID' # noqa
 # Replace 'CHANNEL_ID' with the ID of the text channel you want to monitor
-TARGET_CHANNEL_ID = CHANNEL_ID
+TARGET_CHANNEL_ID = CHANNEL_ID # noqa
 # Replace 'TARGET_FOLDER' with the path to the folder where you want to save the files in following format: X:\\Your\\Target\\folder
-TARGET_FOLDER = 'MISSION_FILE_PATH'
+TARGET_FOLDER = 'MISSION_FILE_PATH' # noqa
 
 
 intents = discord.Intents.default()
