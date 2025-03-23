@@ -1,0 +1,38 @@
+name: Release Badge
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release-badge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get latest release
+        id: get_release
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/${{ github.repository }}/releases/latest
+
+      - name: Create release badge
+        run: |
+          RELEASE_TAG=$(echo "${{ steps.get_release.outputs.data }}" | jq -r .tag_name)
+          echo "RELEASE_TAG=${RELEASE_TAG}" > $GITHUB_ENV
+
+      - name: Generate badge
+        run: |
+          curl -o release-badge.svg "https://img.shields.io/badge/release-${RELEASE_TAG}-brightgreen"
+          mkdir -p badges
+          mv release-badge.svg badges/
+
+      - name: Commit badge
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add badges/release-badge.svg
+          git commit -m "Update release badge"
+          git push
