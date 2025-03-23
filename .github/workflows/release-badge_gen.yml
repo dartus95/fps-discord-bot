@@ -25,9 +25,12 @@ jobs:
           route: GET /repos/${{ github.repository }}/releases/latest
           mediaType: "application/vnd.github.v3+json"
 
+      - name: Debug get_release output
+        run: echo "${{ steps.get_release.outputs.data }}"
+
       - name: Create release badge
         run: |
-          RELEASE_TAG=$(echo "${{ steps.get_release.outputs.data }}" | jq -r .tag_name)
+          RELEASE_TAG=$(echo '${{ steps.get_release.outputs.data }}' | jq -r .tag_name)
           echo "RELEASE_TAG=${RELEASE_TAG}" > $GITHUB_ENV
 
       - name: Generate badge
