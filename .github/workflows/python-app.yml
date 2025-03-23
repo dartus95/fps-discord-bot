@@ -18,9 +18,11 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: ./.github/actions/checkout
+      uses: actions/checkout@v4
     - name: Set up Python 3.12
-      uses: ./.github/actions/setup-python
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.12"
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
