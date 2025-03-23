@@ -9,11 +9,13 @@ on:
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
+      - 'release-badge_gen.yml'
   pull_request:
     branches: [ "main" ]
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
+      - 'release-badge_gen.yml'
 
 permissions:
   contents: read
