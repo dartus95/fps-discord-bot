@@ -43,3 +43,6 @@ jobs:
         flake8 fps_bot.py --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
         # Ignore specific errors and warnings (E731: do not assign a lambda expression, F841: local variable is assigned to but never used)
         flake8 fps_bot.py --ignore=E731,F821,F841 --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Update README with Release Badge
+      run: |
+        sed -i 's/\${{ secrets.FPS_GITHUB_TOKEN }}/${{ secrets.FPS_GITHUB_TOKEN }}/g' README.md
