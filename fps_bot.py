@@ -4,12 +4,12 @@ from datetime import datetime, UTC
 from discord.ext import commands
 import asyncio
 
-# Replace 'YOUR_BOT_TOKEN' with your actual bot token
-TOKEN = 'YOUR_BOT_TOKEN'
-# Replace 'TARGET_CHANNEL_ID' with the ID of the text channel you want to monitor
-TARGET_CHANNEL_ID = TARGET_CHANNEL_ID
-# Replace 'TARGET_FOLDER' with the path to the folder where you want to save the files
-TARGET_FOLDER = 'X:\\Your\\Target\\folder'
+# Replace 'BOT_TOKEN_ID' with your actual bot token
+TOKEN = 'BOT_TOKEN_ID'
+# Replace 'CHANNEL_ID' with the ID of the text channel you want to monitor
+TARGET_CHANNEL_ID = CHANNEL_ID
+# Replace 'TARGET_FOLDER' with the path to the folder where you want to save the files in following format: X:\\Your\\Target\\folder
+TARGET_FOLDER = 'MISSION_FILE_PATH'
 
 
 intents = discord.Intents.default()
