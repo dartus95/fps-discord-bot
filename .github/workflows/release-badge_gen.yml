@@ -21,7 +21,7 @@ jobs:
         uses: octokit/request-action@v2.x
         with:
           route: GET /repos/${{ github.repository }}/releases/latest
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.FPS_GITHUB_TOKEN }}
 
       - name: Create release badge
         run: |
