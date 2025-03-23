@@ -1,8 +1,9 @@
+<img src="/assets/images/FPS_logo.png" alt="FPS Logo" width=35% height=35%></img>
+
 [![Python Syntax Test](https://github.com/dartus95/fps-discord-bot/actions/workflows/python-app.yml/badge.svg)](https://github.com/dartus95/fps-discord-bot/actions/workflows/python-app.yml) 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/dartus95/fps-discord-bot)
 ![GitHub License](https://img.shields.io/github/license/dartus95/fps-discord-bot)
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/dartus95/fps-discord-bot/latest)
-
 <!-- ![Static Badge](https://img.shields.io/badge/Release%20Version-Version%201.1.0-brightgreen) -->
 
 # FPS Discord Bot
