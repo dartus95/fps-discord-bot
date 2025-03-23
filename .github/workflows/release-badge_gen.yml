@@ -22,7 +22,7 @@ jobs:
         id: get_release
         uses: octokit/request-action@v2.x
         env:
-          GITHUB_TOKEN: ${{ secrets.FPS_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           route: GET /repos/${{ github.repository }}/releases/latest
           mediaType: "application/vnd.github.v3+json"
@@ -49,7 +49,7 @@ jobs:
           else
             echo "Badge does not exist. Creating new badge."
             echo "update_needed=true" >> $GITHUB_ENV
-        shell: /usr/bin/bash -e
+        shell: bash
         env:
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
 
