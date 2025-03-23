@@ -7,7 +7,6 @@ on:
       - 'README.md'
       - 'LICENSE'
 
-
 jobs:
   release-badge:
     runs-on: ubuntu-latest
@@ -37,7 +36,6 @@ jobs:
           echo "RELEASE_TAG=${RELEASE_TAG}" > $GITHUB_ENV
 
       - name: Check if release badge needs update
-        id: check_badge
         run: |
           if [ -f badges/release-badge.svg ]; then
             CURRENT_TAG=$(grep -oP 'release-\K[^-]+' badges/release-badge.svg)
@@ -51,7 +49,8 @@ jobs:
           else
             echo "Badge does not exist. Creating new badge."
             echo "update_needed=true" >> $GITHUB_ENV
-          fi
+        env:
+          RELEASE_TAG: ${{ env.RELEASE_TAG }}
 
       - name: Generate badge
         if: env.update_needed == 'true'
