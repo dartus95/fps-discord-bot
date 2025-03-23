@@ -22,7 +22,7 @@ jobs:
         id: get_release
         uses: octokit/request-action@v2.x
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FPS_GITHUB_TOKEN }}
         with:
           route: GET /repos/${{ github.repository }}/releases/latest
           mediaType: "application/vnd.github.v3+json"
