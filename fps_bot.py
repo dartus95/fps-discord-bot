@@ -11,9 +11,11 @@ import asyncio
 # Replace 'TARGET_FOLDER' with the path to the folder where you want to save the files in following format: X:\\Your\\Target\\folder
 # TARGET_FOLDER = 'MISSION_FILE_PATH'
 
+# Sekce pro automatizovanou kontrolu githubem
 TOKEN = os.getenv('BOT_TOKEN_ID')
 TARGET_CHANNEL_ID = int(os.getenv('CHANNEL_ID'))
 TARGET_FOLDER = os.getenv('MISSION_FILE_PATH')
+
 
 intents = discord.Intents.default()
 intents.messages = True
