@@ -49,6 +49,7 @@ jobs:
           else
             echo "Badge does not exist. Creating new badge."
             echo "update_needed=true" >> $GITHUB_ENV
+        shell: /usr/bin/bash -e
         env:
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
 
