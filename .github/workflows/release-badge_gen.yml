@@ -26,7 +26,7 @@ jobs:
           mediaType: "application/vnd.github.v3+json"
 
       - name: Debug get_release output
-        run: echo "${{ steps.get_release.outputs.data }}"
+        run: echo '${{ steps.get_release.outputs.data }}'
 
       - name: Create release badge
         run: |
